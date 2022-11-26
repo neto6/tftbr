@@ -1,8 +1,8 @@
 <?php
 
-require('../config/config.php');
-require('../model/summoner.php');
-require('../model/summoner_dao.php');
+require('./config/config.php');
+require('./model/summoner.php');
+require('./model/summoner_dao.php');
 
 
 $summoner_dao = new SummonerDAO();
