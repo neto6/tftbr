@@ -6,6 +6,6 @@ require('./model/summoner_dao.php');
 
 
 $summoner_dao = new SummonerDAO();
-var_dump($summoner_dao->getSummoner($_GET['name']));
+var_dump($summoner_dao->getSummoner('henper'));
 
 ?>
