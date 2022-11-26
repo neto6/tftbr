@@ -31,5 +31,6 @@ class SummonerDAO {
             $parsed['puuid'],
             $parsed['summoner_level']
         );
+        return $summoner;
     }
 }
