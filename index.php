@@ -7,6 +7,6 @@ require('./model/summoner_dao.php');
 
 $summoner_dao = new SummonerDAO();
 $summoner = $summoner_dao->getSummoner('henper');
-$summoner_dao->getSummonerRecentMatches($summoner->puuid);
+$summoner_dao->getSummonerRecentMatches($summoner->getPuuid());
 
 ?>
