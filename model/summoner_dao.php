@@ -49,10 +49,9 @@ class SummonerDAO {
     }
 
     function getSummonerRecentMatchesFromAPI($summoner_puuid) {
-        global $end_point;
         global $api_key;
         $response_body = file_get_contents(
-            $end_point.'/tft/match/v1/matches/by-puuid/'.$summoner_puuid.'/ids?api_key='.$api_key
+            'https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/'.$summoner_puuid.'/ids?api_key='.$api_key
         );
         $parsed = json_decode($response_body);
         var_dump($parsed);
