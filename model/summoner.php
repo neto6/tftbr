@@ -18,6 +18,10 @@ class Summoner {
         $this->puuid = $puuid;
         $this->summoner_level = $summoner_level;
     }
+
+    function getPuuid() {
+        return $this->puuid;
+    }
 }
 
 ?>
