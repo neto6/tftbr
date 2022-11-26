@@ -21,16 +21,15 @@ class SummonerDAO {
         $response_body = file_get_contents(
             $end_point.'/tft/summoner/v1/summoners/by-name/'.$summoner_name.'?api_key='.$api_key
         );
-        $parsed = json_decode($response_body, true);
-        $summoner = new Summoner(
-            $parsed['account_id'],
-            $parsed['profile_icon_id'],
-            $parsed['revision_date'],
-            $parsed['name'],
-            $parsed['id'],
-            $parsed['puuid'],
-            $parsed['summoner_level']
+        $parsed = json_decode($response_body);
+        return new Summoner(
+            $parsed->account_id,
+            $parsed->profile_icon_id,
+            $parsed->revision_date,
+            $parsed->name,
+            $parsed->id,
+            $parsed->puuid,
+            $parsed->summoner_level
         );
-        return $summoner;
     }
 }
