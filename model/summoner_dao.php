@@ -2,9 +2,9 @@
 
 class SummonerDAO {
     function getSummoner($summoner_name) {
-        $summoner = getSummonerFromDB($summoner_name);
+        $summoner = $this->getSummonerFromDB($summoner_name);
         if ($summoner == false) {
-            return getSummonerFromAPI($summoner_name);
+            return $this->getSummonerFromAPI($summoner_name);
         }
         else {
             return $summoner;
