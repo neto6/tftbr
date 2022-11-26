@@ -24,13 +24,13 @@ class SummonerDAO {
         $parsed = json_decode($response_body);
         var_dump($parsed);
         return new Summoner(
-            $parsed->account_id,
-            $parsed->profile_icon_id,
-            $parsed->revision_date,
+            $parsed->accountId,
+            $parsed->profileIconId,
+            $parsed->revisionDate,
             $parsed->name,
             $parsed->id,
             $parsed->puuid,
-            $parsed->summoner_level
+            $parsed->summonerLevel
         );
     }
 }
