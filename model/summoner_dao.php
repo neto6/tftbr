@@ -21,7 +21,7 @@ class SummonerDAO {
         $response_body = file_get_contents(
             $end_point.'/tft/summoner/v1/summoners/by-name/'.$summoner_name.'?api_key='.$api_key
         );
-        $parsed = json_decode($response_body, false);
+        $parsed = json_decode($response_body, true);
         $summoner = new Summoner(
             $parsed['account_id'],
             $parsed['profile_icon_id'],
