@@ -16,7 +16,17 @@ class SummonerDAO {
     }
 
     function getSummonerFromAPI($summoner_name) {
-        $response_body = file_get_contents('https://br1.api.riotgames.com/tft/summoner/v1/summoners/by-name/'.$summoner_name);
-        var_dump($response_body);
+        global $end_point;
+        $response_body = file_get_contents($end_point.'/tft/summoner/v1/summoners/by-name/'.$summoner_name);
+        $parsed = json_decode($response_body);
+        $summoner = new Summoner(
+            $parsed->account_id,
+            $parsed->profile_icon_id,
+            $parsed->revision_date,
+            $parsed->name,
+            $parsed->id,
+            $parsed->puuid,
+            $parsed->summoner_level
+        );
     }
 }
