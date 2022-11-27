@@ -2,9 +2,9 @@
 
 class MatchDAO {
     function getMatch($match_id) {
-        $match = getMatchFromDB($match_id);
+        $match = $this->getMatchFromDB($match_id);
         if ($match == false) {
-            return getMatchFromAPI($match_id);
+            return $this->getMatchFromAPI($match_id);
         }
         else {
             return $match;
