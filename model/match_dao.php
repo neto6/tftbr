@@ -20,7 +20,7 @@ class MatchDAO {
         $response_body = file_get_contents('https://americas.api.riotgames.com/tft/match/v1/matches/'.$match_id.'?api_key='.$api_key);
         $parse = json_decode($response_body);
 
-        var_dump($parse->info);
+        var_dump($parse->info->game_datetime);
         
         $traits = array();
         $units = array();
