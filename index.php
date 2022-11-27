@@ -7,6 +7,10 @@ require('./model/summoner_dao.php');
 
 $summoner_dao = new SummonerDAO();
 $summoner = $summoner_dao->getSummoner('henper');
-$summoner_dao->getSummonerRecentMatches($summoner->getPuuid());
+$recent_matches = $summoner_dao->getSummonerRecentMatches($summoner->getPuuid());
+$match_dao = new MatchDAO();
+foreach ($recent_matches as $recent_match) {
+    var_dump($match_dao->getMatch($recent_match));
+}
 
 ?>
