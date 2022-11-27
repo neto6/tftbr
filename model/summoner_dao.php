@@ -53,7 +53,6 @@ class SummonerDAO {
         $response_body = file_get_contents(
             'https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/'.$summoner_puuid.'/ids?api_key='.$api_key
         );
-        $parsed = json_decode($response_body);
-        var_dump($parsed);
+        return json_decode($response_body);
     }
 }
