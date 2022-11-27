@@ -51,7 +51,7 @@ class SummonerDAO {
     function getSummonerRecentMatchesFromAPI($summoner_puuid) {
         global $api_key;
         $response_body = file_get_contents(
-            'https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/'.$summoner_puuid.'/ids?start=0&count=5&api_key='.$api_key
+            'https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/'.$summoner_puuid.'/ids?start=0&count=2&api_key='.$api_key
         );
         return json_decode($response_body);
     }
