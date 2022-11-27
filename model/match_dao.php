@@ -1,11 +1,17 @@
 <?php
 
 class MatchDAO {
-    function getMatch() {
-
+    function getMatch($match_id) {
+        $match = getMatchFromDB($match_id);
+        if ($match == false) {
+            return getMatchFromAPI($match_id);
+        }
+        else {
+            return $match;
+        }
     }
 
-    function getMatchFromDB() {
+    function getMatchFromDB($match_id) {
         return false;
     }
 
