@@ -53,6 +53,7 @@ class MatchDAO {
                 $p->gold_left,
                 $p->last_round,
                 $p->level,
+                $p->placement,
                 $p->players_eliminated,
                 $p->puuid,
                 $p->time_eliminated,
