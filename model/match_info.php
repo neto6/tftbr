@@ -1,6 +1,6 @@
 <?php
 
-class MatchMetadata {
+class MatchInfo {
     private $game_datetime;
     private $game_length;
     private $game_version;
