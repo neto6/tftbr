@@ -77,8 +77,8 @@ class MatchDAO {
             $parse->info->tft_set_number
         );
         $match = new Match(
-            $match_info,
-            $match_metadata
+            $match_metadata,
+            $match_info            
         );
         return $match;
     }
