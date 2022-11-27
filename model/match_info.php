@@ -10,7 +10,10 @@ class MatchInfo {
     private $tft_set_core_name;
     private $tft_set_number;
 
-    function __construct() {
+    function __construct(
+            $game_datetime, $game_length, $game_version, $participants, $queue_id, 
+            $tft_game_type, $tft_set_core_name, $tft_set_number
+    ) {
         $this->game_datetime = $game_datetime;
         $this->game_length = $game_length;
         $this->game_version = $game_version;
