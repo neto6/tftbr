@@ -1,14 +1,14 @@
 <?php
 
 class MatchInfo {
-    private $game_datetime;
-    private $game_length;
-    private $game_version;
-    private $participants;
-    private $queue_id;
-    private $tft_game_type;
-    private $tft_set_core_name;
-    private $tft_set_number;
+    public $game_datetime;
+    public $game_length;
+    public $game_version;
+    public $participants;
+    public $queue_id;
+    public $tft_game_type;
+    public $tft_set_core_name;
+    public $tft_set_number;
 
     function __construct(
             $game_datetime, $game_length, $game_version, $participants, $queue_id, 

@@ -1,12 +1,12 @@
 <?php
 
 class Unit {
-    private $items;
-    private $character_id;
-    private $item_names;
-    private $name;
-    private $rarity;
-    private $tier;
+    public $items;
+    public $character_id;
+    public $item_names;
+    public $name;
+    public $rarity;
+    public $tier;
 
     function __construct($character_id, $item_names, $items, $name, $rarity, $tier) {
         $this->character_id = $character_id;

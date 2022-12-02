@@ -1,17 +1,17 @@
 <?php
 
 class Participant {
-    private $augments;
-    private $companion;
-    private $gold_left;
-    private $last_round;
-    private $level;
-    private $players_eliminated;
-    private $puuid;
-    private $time_eliminated;
-    private $total_damage_to_players;
-    private $traits;
-    private $units;
+    public $augments;
+    public $companion;
+    public $gold_left;
+    public $last_round;
+    public $level;
+    public $players_eliminated;
+    public $puuid;
+    public $time_eliminated;
+    public $total_damage_to_players;
+    public $traits;
+    public $units;
 
     function __construct($augments, $companion, $gold_left, $last_round, $level, $placement, $players_eliminated,
         $puuid, $time_eliminated, $total_damage_to_players, $traits, $units

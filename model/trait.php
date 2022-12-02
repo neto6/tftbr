@@ -1,11 +1,11 @@
 <?php
 
 class PTrait {
-    private $name;
-    private $num_units;
-    private $style;
-    private $tier_current;
-    private $tier_total;
+    public $name;
+    public $num_units;
+    public $style;
+    public $tier_current;
+    public $tier_total;
 
     function __construct($name, $num_units, $style, $tier_current, $tier_total) {
         $this->name = $name;

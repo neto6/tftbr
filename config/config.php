@@ -1,6 +1,6 @@
 <?php
 
 $end_point = 'https://br1.api.riotgames.com';
-$api_key = 'RGAPI-9a096ee1-1c56-4ff4-a4b0-11b5e18fde91';
+$api_key = 'RGAPI-6cc7902c-2785-47f2-af89-979da485bccc';
 
 ?>

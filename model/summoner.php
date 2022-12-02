@@ -1,13 +1,13 @@
 <?php
 
 class Summoner {
-    private $account_id;
-    private $profile_icon_id;
-    private $revision_date;
-    private $name;
-    private $id;
-    private $puuid;
-    private $summoner_level;
+    public $account_id;
+    public $profile_icon_id;
+    public $revision_date;
+    public $name;
+    public $id;
+    public $puuid;
+    public $summoner_level;
 
     function __construct($account_id, $profile_icon_id, $revision_date, $name, $id, $puuid, $summoner_level) {
         $this->account_id = $account_id;
