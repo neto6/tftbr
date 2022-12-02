@@ -1,9 +1,9 @@
 <?php
 
 $servername = 'mysql27-farm10.kinghost.net';
-$username = 'tft';
-$password = 'Teamfight1';
-$db = 'tft';
+$username = 'tft01';
+$password = 'K593ZXE89CBq5KL';
+$db = 'tft01';
 
 $con = new mysqli($servername, $username, $password, $db);
 
