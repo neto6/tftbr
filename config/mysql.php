@@ -1,6 +1,6 @@
 <?php
 
-$servername = 'mysql.tft.kinghost.net';
+$servername = 'mysql27-farm10.kinghost.net';
 $username = 'tft';
 $password = 'Teamfight1';
 $db = 'tft';
