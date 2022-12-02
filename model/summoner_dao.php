@@ -16,7 +16,7 @@ class SummonerDAO {
 
         $sql = "SELECT account_id, profile_icon_id, revision_date, name, id, puuid, summoner_level
                 FROM t_summoner
-                WHERE name = '$summoner_name'";
+                WHERE LOWER(REPLACE(name,' ','')) = '$summoner_name'";
 
         $result = $con->query($sql);
 
