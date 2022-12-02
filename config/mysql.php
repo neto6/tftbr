@@ -1,9 +1,9 @@
 <?php
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$db = 'tftbr';
+$servername = 'mysql.tft.kinghost.net';
+$username = 'tft';
+$password = 'Teamfight1';
+$db = 'tft';
 
 $con = new mysqli($servername, $username, $password, $db);
 
