@@ -2,6 +2,7 @@
 
 class SummonerController {
     function search($summoner_name) {
+        global $img;
 
         $summoner_name = strtolower(str_replace(' ','',$summoner_name));
 

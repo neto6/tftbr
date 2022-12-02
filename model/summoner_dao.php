@@ -11,12 +11,44 @@ class SummonerDAO {
         }
     }
 
+    function getSummonerByPuuid($puuid) {
+        $summoner = $this->getSummonerByPuuidFromDB($puuid);
+        if ($summoner == false) {
+            return $this->getSummonerByPuuidFromAPI($puuid);
+        }
+        else {
+            return $summoner;
+        }
+    }
+
     function getSummonerFromDB($summoner_name) {
         global $con;
 
         $sql = "SELECT account_id, profile_icon_id, revision_date, name, id, puuid, summoner_level
                 FROM t_summoner
                 WHERE LOWER(REPLACE(name,' ','')) = '$summoner_name'";
+
+        $result = $con->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            $summoner = new Summoner($row['account_id'], $row['profile_icon_id'], $row['revision_date'],
+                                        $row['name'], $row['id'], $row['puuid'], $row['summoner_level']);
+
+            return $summoner;
+        }
+        else {
+            return false;
+        }
+    }
+
+    function getSummonerByPuuidFromDB($puuid) {
+        global $con;
+
+        $sql = "SELECT account_id, profile_icon_id, revision_date, name, id, puuid, summoner_level
+                FROM t_summoner
+                WHERE puuid = '$puuid'";
 
         $result = $con->query($sql);
 
@@ -48,6 +80,26 @@ class SummonerDAO {
         global $api_key;
         $response_body = file_get_contents(
             $end_point.'/tft/summoner/v1/summoners/by-name/'.$summoner_name.'?api_key='.$api_key
+        );
+        $parsed = json_decode($response_body);
+        $summoner = new Summoner(
+            $parsed->accountId,
+            $parsed->profileIconId,
+            $parsed->revisionDate,
+            $parsed->name,
+            $parsed->id,
+            $parsed->puuid,
+            $parsed->summonerLevel
+        );
+        $this->createSummonerInDB($summoner);
+        return $summoner;
+    }
+
+    function getSummonerByPuuidFromAPI($puuid) {
+        global $end_point;
+        global $api_key;
+        $response_body = file_get_contents(
+            $end_point.'/tft/summoner/v1/summoners/by-puuid/'.$puuid.'?api_key='.$api_key
         );
         $parsed = json_decode($response_body);
         $summoner = new Summoner(

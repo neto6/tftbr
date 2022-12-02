@@ -30,7 +30,13 @@
           <p><?php echo date('d/m/Y', $match->info->game_datetime/1000); ?>
             - Terminou em <?php echo $p->placement; ?>º
           </p>
-          <p></p>
+          <p>Composição:</p>
+          <p>
+            <?php foreach($p->units as $unit) { ?>
+              <img height="48px" class="rounded-circle" src="<?php echo $img[$unit->character_id]; ?>"/>
+            <?php } ?>
+          </p>
+          <p><a class="text-white" href="match_view.php?match_id=<?php echo $match->match_id; ?>">Ver detalhes da partida</a></p>
         </div>
       <?php } ?>
     </div>

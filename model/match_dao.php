@@ -136,12 +136,13 @@ class MatchDAO {
         while ($row = $result->fetch_assoc()) {
             $units[] = new Unit(
                 $row['character_id'],
+                NULL,
+                NULL,
                 $row['name'],
                 $row['rarity'],
                 $row['tier']
             );
         }     
-
         return $units;        
     }
 

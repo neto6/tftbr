@@ -15,8 +15,8 @@ require('./model/match_dao.php');
 require('./control/summoner.php');
 require('./control/match.php');
 
-$summoner_controller = new SummonerController();
+$match_controller = new MatchController();
 
-$summoner_controller->search($_GET['name']);
+$match_controller->view($_GET['match_id']);
 
 ?>
