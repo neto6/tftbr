@@ -39,7 +39,7 @@ class MatchDAO {
             $row['tft_set_core_name'],
             $row['tft_set_number']
         );
-        $match = new Match($match_id, $metadata, $info);
+        $match = new TMatch($match_id, $metadata, $info);
 
         return $match;
     }
@@ -314,7 +314,7 @@ class MatchDAO {
             $parse->info->tft_set_core_name,
             $parse->info->tft_set_number
         );
-        $match = new Match(
+        $match = new TMatch(
             $match_id,
             $match_metadata,
             $match_info            
