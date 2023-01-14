@@ -1,6 +1,6 @@
 <?php
 
-class Match {
+class TMatch {
     public $match_id;
     public $metadata;
     public $info;
